@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Моя веб-страница</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <main class="wrapper">
+        <h2>Задание 1</h2>
+        <p>
+            Вам дана заготовка и результат, который вы должны получить. Ваша задача — написать код, который будет преобразовывать XML в JS-объект и выводить его в консоль.</p>
+        <h3>XML:</h3>
+        <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(40, 40, 40); color: rgb(235, 219, 178);"><span class="xml"><span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">list</span>&gt;</span>
+  <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">student</span>&gt;</span>
+    <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">name</span> <span class="hljs-attr" style="color: rgb(250, 189, 47);">lang</span>=<span class="hljs-string" style="color: rgb(184, 187, 38);">"en"</span>&gt;</span>
+      <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">first</span>&gt;</span>Ivan<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">first</span>&gt;</span>
+      <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">second</span>&gt;</span>Ivanov<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">second</span>&gt;</span>
+    <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">name</span>&gt;</span>
+    <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">age</span>&gt;</span>35<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">age</span>&gt;</span>
+    <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">prof</span>&gt;</span>teacher<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">prof</span>&gt;</span>
+  <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">student</span>&gt;</span>
+  <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">student</span>&gt;</span>
+    <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">name</span> <span class="hljs-attr" style="color: rgb(250, 189, 47);">lang</span>=<span class="hljs-string" style="color: rgb(184, 187, 38);">"ru"</span>&gt;</span>
+      <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">first</span>&gt;</span>Петр<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">first</span>&gt;</span>
+      <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">second</span>&gt;</span>Петров<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">second</span>&gt;</span>
+    <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">name</span>&gt;</span>
+    <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">age</span>&gt;</span>58<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">age</span>&gt;</span>
+    <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;<span class="hljs-name" style="color: rgb(131, 165, 152);">prof</span>&gt;</span>driver<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">prof</span>&gt;</span>
+  <span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">student</span>&gt;</span>
+<span class="hljs-tag" style="color: rgb(142, 192, 124); font-weight: 700;">&lt;/<span class="hljs-name" style="color: rgb(131, 165, 152);">list</span>&gt;</span></span></pre>
+        <h3>JS-объект:</h3>
+        <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(40, 40, 40); color: rgb(235, 219, 178);">{
+  <span class="hljs-attribute" style="color: rgb(142, 192, 124);">list</span>: [
+    { <span class="hljs-attribute" style="color: rgb(142, 192, 124);">name</span>: <span class="hljs-string" style="color: rgb(184, 187, 38);">'Ivan Ivanov'</span>, <span class="hljs-attribute" style="color: rgb(142, 192, 124);">age</span>: <span class="hljs-number" style="color: rgb(211, 134, 155);">35</span>, <span class="hljs-attribute" style="color: rgb(142, 192, 124);">prof</span>: <span class="hljs-string" style="color: rgb(184, 187, 38);">'teacher'</span>, <span class="hljs-attribute" style="color: rgb(142, 192, 124);">lang</span>: <span class="hljs-string" style="color: rgb(184, 187, 38);">'en'</span> },
+    { <span class="hljs-attribute" style="color: rgb(142, 192, 124);">name</span>: <span class="hljs-string" style="color: rgb(184, 187, 38);">'Петр Петров'</span>, <span class="hljs-attribute" style="color: rgb(142, 192, 124);">age</span>: <span class="hljs-number" style="color: rgb(211, 134, 155);">58</span>, <span class="hljs-attribute" style="color: rgb(142, 192, 124);">prof</span>: <span class="hljs-string" style="color: rgb(184, 187, 38);">'driver'</span>, <span class="hljs-attribute" style="color: rgb(142, 192, 124);">lang</span>: <span class="hljs-string" style="color: rgb(184, 187, 38);">'ru'</span> },
+  ]
+}</pre>
+    </main>
+    <script src="JS/XML_to_JS.js"></script>
+</body>
+
+</html>
